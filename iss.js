@@ -72,15 +72,15 @@ const fetchISSTimesForMyLocation = function (callback) {
   fetchMyIP((IP, error) => {
     if (error) {
       return callback(null, error);
-    }
+    };
     fetchCoordsByIP(IP, (coords, error) => {
       if (error) {
         return callback(null, error);
-      }
+      };
       fetchISSFlyOverTimes(coords, (data, error) => {
         if (error) {
           return callback(null, error);
-        }
+        };
         callback(data, error);
       });
     });
