@@ -47,27 +47,35 @@ const request = require('request');
 
 // }
 
-const fetchISSFlyOverTimes = function (coords, callback) {
+// const fetchISSFlyOverTimes = function (coords, callback) {
 
-  request(`https://iss-pass.herokuapp.com/json/?lat=${coords.latitude}&lon=${coords.longitude}`, (error, response, body) => {
+//   request(`https://iss-pass.herokuapp.com/json/?lat=${coords.latitude}&lon=${coords.longitude}`, (error, response, body) => {
 
-    if (error) {
-      callback(null, error);
-      return;
-    }
+//     if (error) {
+//       callback(null, error);
+//       return;
+//     }
 
-    if (response.statusCode !== 200) {
-      const msg = new Error(`Status Code: ${response.statusCode} when fetching coordinates, received: ${body || '...'}`);
-      callback(null, msg);
-      return;
-    }
+//     if (response.statusCode !== 200) {
+//       const msg = new Error(`Status Code: ${response.statusCode} when fetching coordinates, received: ${body || '...'}`);
+//       callback(null, msg);
+//       return;
+//     }
 
-    const data = JSON.parse(body).response;
-    callback(data);
+//     const data = JSON.parse(body).response;
+//     callback(data);
 
-  })
+//   })
+
+// }
+
+const fetchISSTimesForMyLocation = function (callback) {
+
+
 
 }
 
+
 // module.exports = fetchMyIP, fetchCoordsByIP;
-module.exports = fetchISSFlyOverTimes;
+// module.exports = fetchISSFlyOverTimes;
+module.exports = fetchISSTimesForMyLocation;
